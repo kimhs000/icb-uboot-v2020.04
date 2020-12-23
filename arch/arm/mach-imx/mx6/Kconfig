@@ -442,6 +442,16 @@ config TARGET_MX6SABRESD
 	select MX6QDL
 	select SUPPORT_SPL
 	imply CMD_DM
+	
+config TARGET_MX6ICB
+	bool "mx6icb"
+	select BOARD_EARLY_INIT_F
+	select BOARD_LATE_INIT
+	select DM
+	select DM_THERMAL
+	select MX6QDL
+	select SUPPORT_SPL
+	imply CMD_DM
 
 config TARGET_MX6QSABREAUTO
     bool "mx6qsabreauto"
@@ -467,6 +477,11 @@ config TARGET_MX6QSABRESD
 	bool "mx6qsabresd"
     select TARGET_MX6SABRESD_COMMON
     select MX6Q
+    
+config TARGET_MX6QICB
+	bool "mx6qicb"
+    select TARGET_MX6SABRESD_COMMON
+    select MX6Q    
 
 config TARGET_MX6QPSABRESD
 	bool "mx6qpsabresd"
@@ -861,6 +876,7 @@ source "board/freescale/mx6qarm2/Kconfig"
 source "board/freescale/mx6memcal/Kconfig"
 source "board/freescale/mx6sabreauto/Kconfig"
 source "board/freescale/mx6sabresd/Kconfig"
+source "board/naimtechnology/mx6icb/Kconfig"
 source "board/freescale/mx6slevk/Kconfig"
 source "board/freescale/mx6sll_val/Kconfig"
 source "board/freescale/mx6sllevk/Kconfig"

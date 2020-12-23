@@ -1,0 +1,15 @@
+if TARGET_MX6ICB || TARGET_MX6ICB_COMMON
+
+config SYS_BOARD
+	default "mx6icb"
+
+config SYS_VENDOR
+	default "naimtechnology"
+
+config SYS_CONFIG_NAME
+	default "mx6icb"
+
+config SYS_TEXT_BASE
+    default 0x17800000
+
+endif

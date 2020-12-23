@@ -260,6 +260,9 @@ cmd_pad_cat = $(cmd_objcopy) && $(append) || rm -f $@
 
 u-boot-with-spl.imx: SPL u-boot.uim FORCE
 	$(call if_changed,pad_cat)
+	
+u-boot-with-sdcard-spl.imx: SPL u-boot.img FORCE
+	$(call if_changed,pad_cat)	
 
 u-boot-with-nand-spl.imx: spl/u-boot-nand-spl.imx u-boot.uim FORCE
 	$(call if_changed,pad_cat)

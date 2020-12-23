@@ -1459,6 +1459,10 @@ u-boot-with-spl.imx u-boot-with-nand-spl.imx: SPL u-boot.bin FORCE
 
 MKIMAGEFLAGS_u-boot.ubl = -n $(UBL_CONFIG) -T ublimage -e $(CONFIG_SYS_TEXT_BASE)
 
+u-boot-with-sdcard-spl.imx: SPL u-boot.img FORCE
+	$(Q)$(MAKE) $(build)=arch/arm/mach-imx $@
+
+
 u-boot.ubl: u-boot-with-spl.bin FORCE
 	$(call if_changed,mkimage)
 
